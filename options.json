@@ -1,0 +1,20 @@
+{
+    "_from_date": "10-01-2019 18:00:00.0",
+    "_table_name": "values_1",
+    "_to_date": "15-01-2019 18:00:00.0",
+    "db_parameters": {
+        "dbname": "asdww",
+        "host": "localhosts",
+        "password": "postgress",
+        "user": "postgress"
+    },
+    "oledb_parameters": {
+        "host": "localhost12",
+        "user": "User12"
+    },
+    "tag_names": {
+        "bool_test": "РўРµСЃС‚",
+        "test": "test.test2",
+        "test.test2": "Р”Р°РІР»РµРЅРёРµ РЅР°СЃРѕСЃР°"
+    }
+}
