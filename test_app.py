@@ -2,6 +2,7 @@ import sys
 
 from Model.Configuration import Configuration
 from Model.ConnectionSettingModel import ModelConnectionSetting
+from Model.JsonCreature import JsonCreature
 from Model.ReadWriteModel import ModelReadWrite
 from Model.test_model import MyModel
 from Presenter.MainPresenter import MyPresenter
@@ -16,6 +17,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class PointOfEntry(object):
 
     def __init__(self):
+
+        test = JsonCreature()
+        test.creature()
 
         # Создаем объекты конфигуратора
         # config = Configuration()
@@ -57,20 +61,4 @@ if __name__ == "__main__":
     # window.show()
     app.exec_()
 
-#     def main():
-#         app = QtWidgets.QApplication(sys.argv)
-#         MainWindow = QtWidgets.QMainWindow()
-#         ui = Ui_MainWindow()
-#         ui.setupUi(MainWindow)
-#         MainWindow.show()
-#         sys.exit(app.exec_())
-#
-#
-#
-#     main()
-#
-# class MainWindow(object):
-#     pass
-#
-# class ReadWrite(object):
-#     pass
+
