@@ -1,20 +1,22 @@
 {
-    "_from_date": "10-01-2019 18:00:00.0",
-    "_table_name": "values_1",
-    "_to_date": "15-01-2019 18:00:00.0",
+    "_from_date": "2019-01-01 18:00:00",
+    "_table_name": "values123",
+    "_to_date": "2019-01-13 18:00:00",
     "db_parameters": {
-        "dbname": "asdww",
+        "dbname": "dbname",
         "host": "localhosts",
-        "password": "postgress",
-        "user": "postgress"
+        "password": "password",
+        "user": "user"
     },
     "oledb_parameters": {
-        "host": "localhost12",
-        "user": "User12"
+        "host": "localhost",
+        "user": "User"
     },
     "tag_names": {
-        "bool_test": "РўРµСЃС‚",
-        "test": "test.test2",
-        "test.test2": "Р”Р°РІР»РµРЅРёРµ РЅР°СЃРѕСЃР°"
+        "SuperTest": "Супер попытка",
+        "TestGG": "hello word",
+        "asdas": "asdasd",
+        "test": "обычный тест",
+        "test.test2": "описание"
     }
 }
