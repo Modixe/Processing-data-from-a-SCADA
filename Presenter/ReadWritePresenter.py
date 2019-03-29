@@ -15,29 +15,33 @@ class ReadWritePresenter(object):
         # Ловим сигнал кнопки "Сохранить" и запускаем функцию сохрание пораметров
         self.read_write_view.signal.save_read_write_Signal.connect(self.save_read_write)
 
+
+
     def run_read_write(self):
         print("+run_read_write")
         config = Configuration()
         config.load()
         self.config = config
 
+        number_lines = self.config.tag_names.__len__()
+
         self.read_write_view.set_read_write(config.table_name,
                                             config.from_date,
-                                            config.to_date,
-                                            config.tags[1].name)
+                                            config.to_date)
 
+        self.read_write_view.add_row(self.config.tag_names)
         self.read_write_view.run_rw()
 
     def save_read_write(self):
+        print("+save_connection_setting_Signal")
 
         # записыва!ем результаты заполнения полей
         self.table_name = self.read_write_view.table_name
         self.from_date = self.read_write_view.from_date
         self.to_date = self.read_write_view.to_date
-        self.tag_names = self.read_write_view.tag_names
+        self.tag_dict = self.read_write_view.tag_dict
 
+        print("+", self.table_name, self.from_date, self.to_date)
 
-        print("+save_connection_setting_Signal")
-        print("+", self.table_name, self.from_date, self.to_date, self.tag_names)
+        self.config.save_read_write(self.table_name, self.from_date, self.to_date, self.tag_dict)
 
-        self.config.save_read_write(self.table_name, self.from_date, self.to_date, self.tag_names)
