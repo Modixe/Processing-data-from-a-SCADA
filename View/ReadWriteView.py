@@ -54,14 +54,17 @@ class Ui_Dialog(object):
         self.tag_dict = {}
 
         rowCount = self.tableWidget.rowCount()
+
+        # Заполняем словарь тегами из таблицы
         for i in range(0, rowCount):
             item = self.tableWidget.item(i, 0)
-            t = item.text()
-
-            item2 = self.tableWidget.item(i, 1)
-            t2 = item2.text()
-
-            self.tag_dict[t] = t2
+            if item is None:
+                print("Пустая строка")
+            else:
+                t = item.text()
+                item2 = self.tableWidget.item(i, 1)
+                t2 = item2.text()
+                self.tag_dict[t] = t2
 
         # отправляем в сигнал, презентор ловит
         self.signal.save_read_write_Signal.emit()
@@ -71,8 +74,9 @@ class Ui_Dialog(object):
 
         self.lineEdit.setText(_translate("Dialog", table_name))
 
-        formated_from_date = QtCore.QDateTime(from_date.year, from_date.month, from_date.day, from_date.hour, from_date.minute,
-                                       from_date.second)
+        formated_from_date = QtCore.QDateTime(from_date.year, from_date.month, from_date.day, from_date.hour,
+                                              from_date.minute,
+                                              from_date.second)
         self.dateTimeEdit.setDateTime(formated_from_date)
 
         formated_to_date = QtCore.QDateTime(to_date.year, to_date.month, to_date.day, to_date.hour, to_date.minute,
@@ -84,15 +88,15 @@ class Ui_Dialog(object):
         # tag_names_key, tag_names_val
         _translate = QtCore.QCoreApplication.translate
 
-        #for index, (key, value) in enumerate(some_dict.items()):
+        # for index, (key, value) in enumerate(some_dict.items()):
         #    print(index, key, value)
 
         for i, (key, val) in enumerate(tag_names.items()):
-            self.tableWidget.setRowCount(i+1)
+            self.tableWidget.setRowCount(i + 1)
             item = QtWidgets.QTableWidgetItem()
             self.tableWidget.setItem(i, 0, item)
 
-            item = self.tableWidget.item(i,0)
+            item = self.tableWidget.item(i, 0)
             item.setText(_translate("Dialog", key))
             item = QtWidgets.QTableWidgetItem()
             self.tableWidget.setItem(i, 1, item)
@@ -100,14 +104,9 @@ class Ui_Dialog(object):
             item = self.tableWidget.item(i, 1)
             item.setText(_translate("Dialog", val))
 
-
-
-
-
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(489, 400)
-        
+        Dialog.setFixedSize(489, 400)
 
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
@@ -388,12 +387,12 @@ class Ui_Dialog(object):
         self.tableWidget.setSortingEnabled(False)
 
         self.tableWidget.setSortingEnabled(__sortingEnabled)
-        self.groupBox.setTitle(_translate("Dialog", "Временной интервал"))
+        self.groupBox.setTitle(_translate("Dialog", "Временной интервал:"))
         self.label_9.setText(_translate("Dialog", "До:"))
         self.dateTimeEdit.setDisplayFormat(_translate("Dialog", "dd.MM.yyyy HH:mm:ss"))
         self.label_8.setText(_translate("Dialog", "От:"))
         self.dateTimeEdit_2.setDisplayFormat(_translate("Dialog", "dd.MM.yyyy HH:mm:ss"))
-        self.groupBox_2.setTitle(_translate("Dialog", "Параментры таблицы"))
+        self.groupBox_2.setTitle(_translate("Dialog", "Параметры таблицы:"))
         self.label_6.setText(_translate("Dialog", "Имя :"))
         self.lineEdit.setText(_translate("Dialog", "Valie"))
 

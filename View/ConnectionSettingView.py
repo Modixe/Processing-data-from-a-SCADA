@@ -36,10 +36,19 @@ class Ui_Connection_Setting(object):
     def setupUi(self, Dialog):
 
         Dialog.setObjectName("Dialog")
-        Dialog.resize(389, 165)
+
+        Dialog.setFixedSize(389, 165)
+
+        font = QtGui.QFont()
+        font.setFamily("Times New Roman")
+        font.setPointSize(9)
+        font.setBold(False)
+        font.setItalic(True)
+        font.setWeight(50)
 
         self.groupBox = QtWidgets.QGroupBox(Dialog)
         self.groupBox.setGeometry(QtCore.QRect(10, 10, 181, 141))
+        self.groupBox.setFont(font)
         self.groupBox.setObjectName("groupBox")
 
         self.label_13 = QtWidgets.QLabel(self.groupBox)
@@ -100,8 +109,13 @@ class Ui_Connection_Setting(object):
         self.lineEdit.setGeometry(QtCore.QRect(60, 20, 113, 20))
         self.lineEdit.setObjectName("lineEdit")
 
+        font.setBold(False)
+        font.setPointSize(9)
+        font.setItalic(True)
+
         self.groupBox_2 = QtWidgets.QGroupBox(Dialog)
         self.groupBox_2.setGeometry(QtCore.QRect(200, 10, 181, 80))
+        self.groupBox_2.setFont(font)
         self.groupBox_2.setObjectName("groupBox_2")
 
         self.label_10 = QtWidgets.QLabel(self.groupBox_2)
@@ -168,7 +182,7 @@ class Ui_Connection_Setting(object):
         self.label_8.setText(_translate("Dialog", "Логин:"))
         self.label_9.setText(_translate("Dialog", "Пароль:"))
         self.label_7.setText(_translate("Dialog", "Бд имя:"))
-        self.groupBox_2.setTitle(_translate("Dialog", "OLEdb параметры"))
+        self.groupBox_2.setTitle(_translate("Dialog", "OLEdb параметры:"))
         self.label_10.setText(_translate("Dialog", "Host:"))
         self.label_12.setText(_translate("Dialog", "User:"))
 
