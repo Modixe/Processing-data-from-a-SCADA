@@ -1,10 +1,11 @@
 import sys
 
-from Model.Configuration import Configuration
-from Model.ConnectionSettingModel import ModelConnectionSetting
-from Model.JsonCreature import JsonCreature
-from Model.ReadWriteModel import ModelReadWrite
-from Model.test_model import MyModel
+
+from Models.Configuration import Configuration
+from Models.ConnectionSettingModel import ModelConnectionSetting
+from Models.JsonCreature import JsonCreature
+from Models.ReadWriteModel import ModelReadWrite
+from Models.test_model import MyModel
 from Presenter.MainPresenter import MyPresenter
 from Presenter.ConnectionSettingPresenter import ConnectionSettingPresenter
 from View.MainWindowView import Ui_MainWindow
@@ -13,6 +14,8 @@ from View.ReadWriteView import Ui_Dialog
 from View.ConnectionSettingView import Ui_Connection_Setting
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+from temp import MyThread
+
 
 class PointOfEntry(object):
 
@@ -20,6 +23,9 @@ class PointOfEntry(object):
 
         test = JsonCreature()
         test.creature()
+        myThread = MyThread()
+        config = Configuration()
+        config.load()
 
         # Создаем объекты конфигуратора
         # config = Configuration()
@@ -36,7 +42,7 @@ class PointOfEntry(object):
         view_connection_setting = Ui_Connection_Setting()
 
         # Передаем модель, вид в презентер
-        self.presenter_main = MyPresenter(test_model, test_view_main)
+        self.presenter_main = MyPresenter(test_model, test_view_main, myThread, config)
         self.presenter_read_write = ReadWritePresenter(model_read_write, view_read_write, test_view_main)
         self.presenter_connection_Setting = ConnectionSettingPresenter(model_connection_setting, view_connection_setting,
                                                                        test_view_main, config=None)
