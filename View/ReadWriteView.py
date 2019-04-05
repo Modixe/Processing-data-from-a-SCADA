@@ -92,6 +92,7 @@ class Ui_Dialog(object):
         #    print(index, key, value)
 
         for i, (key, val) in enumerate(tag_names.items()):
+
             self.tableWidget.setRowCount(i + 1)
             item = QtWidgets.QTableWidgetItem()
             self.tableWidget.setItem(i, 0, item)
