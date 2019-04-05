@@ -1,4 +1,4 @@
-from Model.Configuration import Configuration
+from Models.Configuration import Configuration
 
 
 class ReadWritePresenter(object):
@@ -13,7 +13,7 @@ class ReadWritePresenter(object):
         # Подключение к пользовательским сигналам представления
         self.view_main.signal.btnSignal.connect(self.run_read_write)
         # Ловим сигнал кнопки "Сохранить" и запускаем функцию сохрание пораметров
-        self.read_write_view.signal.save_read_write_Signal.connect(self.save_read_write)
+        #self.read_write_view.signal.save_read_write_Signal.connect(self.save_read_write)
 
 
 

@@ -1,4 +1,4 @@
-from Model.Configuration import Configuration
+from Models.Configuration import Configuration
 
 
 class ConnectionSettingPresenter(object):
