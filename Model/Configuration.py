@@ -4,7 +4,7 @@ import sys
 import os
 
 
-from Model.Tag import Tag
+from Models.Tag import Tag
 
 
 class Configuration(object):
