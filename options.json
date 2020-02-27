@@ -1,22 +1,20 @@
 {
-    "_from_date": "2019-01-01 18:00:00",
-    "_table_name": "values123",
-    "_to_date": "2019-01-13 18:00:00",
+    "_from_date": "2019-01-09 18:00:00",
+    "_table_name": "Test99",
+    "_to_date": "2019-02-18 18:00:00",
     "db_parameters": {
-        "dbname": "dbname",
-        "host": "localhosts",
-        "password": "password",
-        "user": "user"
+        "dbname": "my_db",
+        "host": "localhost",
+        "password": "postgres",
+        "user": "postgres"
     },
     "oledb_parameters": {
         "host": "localhost",
-        "user": "User"
+        "user": "User12"
     },
     "tag_names": {
-        "SuperTest": "Супер попытка",
-        "TestGG": "hello word",
-        "asdas": "asdasd",
-        "test": "обычный тест",
-        "test.test2": "описание"
+        "bool_test": "Тест",
+        "test": "Температура подшипинка1"
+
     }
 }
